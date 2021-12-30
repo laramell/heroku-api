@@ -17,14 +17,12 @@ $router->get('/', function () use ($router) {
     return 'Hello, world!';
 });
 
-//$router->get('/students','StudentsController@all');
-
-//$router->group(['prefix' => 'students'], function () use ($router){
-//    $router->get('/', 'StudentsController@all');
-//    $router->get('/id', 'StudentsController@selectById');
-//    $router->get('/email', 'StudentsController@selectByEmail');
-//    $router->get('/since', 'StudentsController@selectBySince');
-//});
+$router->group(['prefix' => 'students'], function () use ($router){
+    $router->get('/', 'StudentsController@all');
+    $router->get('/id', 'StudentsController@selectById');
+    $router->get('/email', 'StudentsController@selectByEmail');
+    $router->get('/since', 'StudentsController@selectBySince');
+});
 
 
 $router->group(['prefix' => 'cards'], function () use ($router){
