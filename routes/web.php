@@ -14,7 +14,7 @@
 */
 
 $router->get('/', function () use ($router) {
-    return 'Hello, world!';
+    return 'Hello, worldd!';
 });
 
 $router->get('/students', function () use ($router) {
