@@ -17,17 +17,18 @@ $router->get('/', function () use ($router) {
     return 'Hello, worldd!';
 });
 
+//$router->get('/students','StudentsController@all');
 
-$router->group(['prefix' => 'students'], function () use ($router){
-    $router->get('/', 'StudentsController@all');
-    $router->get('/id', 'StudentsController@selectById');
-    $router->get('/email', 'StudentsController@selectByEmail');
-    $router->get('/since', 'StudentsController@selectBySince');
-});
-
-//$router->group(['prefix' => 'cards'], function () use ($router){
-//    $router->get('/', 'CardsController@all');
-//    $router->get('/student', 'CardsController@selectByStudent');
-//    $router->get('/review/student/today', 'CardsController@selectByReviewAndStudentToday');
-//    $router->get('/review/student/late', 'CardsController@selectByReviewAndStudentLate');
+//$router->group(['prefix' => 'students'], function () use ($router){
+//    $router->get('/', 'StudentsController@all');
+//    $router->get('/id', 'StudentsController@selectById');
+//    $router->get('/email', 'StudentsController@selectByEmail');
+//    $router->get('/since', 'StudentsController@selectBySince');
 //});
+
+$router->group(['prefix' => 'cards'], function () use ($router){
+    $router->get('/', 'CardsController@all');
+    $router->get('/student', 'CardsController@selectByStudent');
+    $router->get('/review/student/today', 'CardsController@selectByReviewAndStudentToday');
+    $router->get('/review/student/late', 'CardsController@selectByReviewAndStudentLate');
+});
