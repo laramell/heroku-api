@@ -9,8 +9,7 @@ class CardsController extends Controller
 {
     public function all()
     {
-//        return Cards::all();
-        return "chegamos";
+        return Cards::all();
     }
 
     public function selectByStudent(Request $request)
