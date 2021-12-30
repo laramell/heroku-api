@@ -14,7 +14,7 @@
 */
 
 $router->get('/', function () use ($router) {
-    return 'Hello, worldd!';
+    return 'Hello, world!';
 });
 
 //$router->get('/students','StudentsController@all');
@@ -26,8 +26,11 @@ $router->get('/', function () use ($router) {
 //    $router->get('/since', 'StudentsController@selectBySince');
 //});
 
+
 $router->group(['prefix' => 'cards'], function () use ($router){
-    $router->get('/', 'CardsController@all');
+    $router->get('/', function () use ($router) {
+        return 'Hello, cards!';
+    });
     $router->get('/student', 'CardsController@selectByStudent');
     $router->get('/review/student/today', 'CardsController@selectByReviewAndStudentToday');
     $router->get('/review/student/late', 'CardsController@selectByReviewAndStudentLate');
