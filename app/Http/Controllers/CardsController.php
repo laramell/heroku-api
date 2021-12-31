@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class CardsController extends Controller
 {
+    /*
+     * Get Routers
+     * */
     public function all()
     {
         return Cards::all();
@@ -30,5 +33,13 @@ class CardsController extends Controller
         return Cards::where('fk_id_student', $request->student)
             ->where('review_card','<', $request->review)
             ->get();
+    }
+
+
+    /*
+     * Posts Routers
+     * */
+    public function register(Request $request)
+    {
     }
 }
