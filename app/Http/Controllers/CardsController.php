@@ -23,7 +23,16 @@ class CardsController extends Controller
 
         $content = explode('||', $contents);
 
-        return $content;
+        $schemas = $cards[1]['schema_card'];
+
+        $schema = explode('||', $schemas);
+
+        $final = [
+            $schema[0] => $content[0],
+            $schema[1] => $content[1],
+            $schema[2] => $content[2]
+        ];
+
     }
 
     public function selectByStudent(Request $request)
