@@ -27,7 +27,7 @@ class CardsController extends Controller
 
         $schema = explode('||', $schemas);
 
-        $final = [
+        return $final = [
             $schema[0] => $content[0],
             $schema[1] => $content[1],
             $schema[2] => $content[2]
