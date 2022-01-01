@@ -57,6 +57,7 @@ $router->group(['prefix' => 'cards'], function () use ($router){
 
     // Show all cards
     $router->get('/', 'CardsController@all');
+    $router->get('/teste', 'CardsController@teste');
 
     // Show a card based on Student id
     $router->get('/student', 'CardsController@selectByStudent');

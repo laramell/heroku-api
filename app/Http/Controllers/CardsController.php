@@ -15,6 +15,13 @@ class CardsController extends Controller
         return Cards::all();
     }
 
+    public function teste()
+    {
+        $cards = Cards::all();
+
+        return $cards[1];
+    }
+
     public function selectByStudent(Request $request)
     {
         return Cards::where('fk_id_student', $request->student)->get();

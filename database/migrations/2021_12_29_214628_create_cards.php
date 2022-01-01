@@ -15,8 +15,9 @@ class CreateCards extends Migration
     {
         Schema::create('cards', function (Blueprint $table) {
             $table->id();
-            $table->string('front_card');
-            $table->string('back_card');
+            $table->string('content_card');
+            $table->string('schema_card');
+            $table->string('style_card');
             $table->string('box_card');
             $table->date('creation_card');
             $table->date('review_card');
