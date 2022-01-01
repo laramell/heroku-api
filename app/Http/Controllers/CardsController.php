@@ -19,7 +19,11 @@ class CardsController extends Controller
     {
         $cards = Cards::all();
 
-        return $cards[1];
+        $contents = $cards[1]['content_card'];
+
+        $content = explode('||', $contents);
+
+        return $content;
     }
 
     public function selectByStudent(Request $request)
