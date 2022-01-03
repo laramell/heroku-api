@@ -41,11 +41,12 @@ class StudentsController extends Controller
         elseif (!isset($request->name) ||
                 !isset($request->email) ||
                 !isset($request->password) ||
-                !isset($request->since))
+                !isset($request->since) ||
+                !isset($request->google))
         {
             return response()->json([
                 'status' => 400,
-                'message' => 'The request failed. We need the name, email, password and since to make the request.'
+                'message' => 'The request failed. We need the name, email, password, since and Google to make the request.'
             ]);
         }
         else {
@@ -54,6 +55,7 @@ class StudentsController extends Controller
             $student->email_student = $request->email;
             $student->password_student = $request->password;
             $student->since_student = $request->since;
+            $student->google_student = $request->google;
 
             if ($student->save()) {
                 return response()->json([
