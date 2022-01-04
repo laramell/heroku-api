@@ -47,10 +47,10 @@ $router->group(['prefix' => 'api'], function () use ($router) {
             $router->post('/register', "StudentsController@register");
 
             // Update a student based on id
-            $router->put('/', "StudentsController@update");
+            $router->put('/update', "StudentsController@update");
 
             // Delete a student based on id
-            $router->delete('/', "StudentsController@delete");
+            $router->delete('/delete', "StudentsController@delete");
         });
         $router->group(['prefix' => 'cards'], function () use ($router){
 
