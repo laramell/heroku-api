@@ -35,7 +35,7 @@ class AuthController extends Controller
         }
 
         // Check if user already exist
-        if (Users::where('email', $email)->count() > 0) {
+        if (Users::where('email', '=', $email)->exists()) {
             return response()->json(['status' => 'error', 'message' => 'User already exists with this email'], 409);
         }
 
